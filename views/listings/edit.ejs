@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container py-5">
+  <div class="bg-white p-5 rounded-4 shadow-lg">
+    <h2 class="mb-4 text-center text-warning fw-bold">✏️ Edit Your Blog</h2>
+
+    <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+
+      <!-- Blog Title -->
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Blog Title</label>
+        <input
+          type="text"
+          name="title"
+          class="form-control form-control-lg shadow-sm"
+          value="<%= blog.title %>"
+          required
+        />
+      </div>
+
+      <!-- Blog Content -->
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Blog Content</label>
+        <textarea
+          name="content"
+          class="form-control form-control-lg shadow-sm"
+          rows="8"
+          required
+        ><%= blog.content %></textarea>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="d-flex gap-3">
+        <button class="btn btn-success btn-lg shadow" type="submit">✅ Update Blog</button>
+        <a href="/blogs/<%= blog._id %>" class="btn btn-secondary btn-lg shadow">🔙 Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

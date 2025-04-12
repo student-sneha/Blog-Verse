@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+.local
+
+# Database files
+*.db
+
+# IDE config files (e.g., VS Code settings)
+.vscode/
+
+# npm-debug.log
+npm-debug.log

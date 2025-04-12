@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate")%>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card p-4 shadow-lg border-0" style="width: 100%; max-width: 450px; border-radius: 16px;">
+    <h3 class="text-center mb-4 fw-bold" style="color: #4B6587;">Welcome Back</h3>
+
+    <form action="/blogs/auth/login" method="POST">
+      <div class="mb-3">
+        <input type="email" name="email" class="form-control rounded-pill" placeholder="Email" required>
+      </div>
+      <div class="mb-3">
+        <input type="password" name="password" class="form-control rounded-pill" placeholder="Password" required>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn rounded-pill" style="background-color: #4B6587; color: #fff;">Login</button>
+      </div>
+    </form>
+
+    <p class="text-center mt-3">
+      Don't have an account?
+      <a href="/blogs/auth/signup" class="text-decoration-none" style="color: #F7B731;">Sign up</a>
+    </p>
+  </div>
+</div>

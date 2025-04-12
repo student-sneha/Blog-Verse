@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md shadow-sm sticky-top" style="background-color: #2C3A47;">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2" href="/blogs">
+      <i class="fa-solid fa-pen-nib text-warning"></i>
+      <span style="letter-spacing: 1px;">BlogVerse</span>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- Left Links -->
+      <div class="navbar-nav">
+        <a class="nav-link text-white mx-2 nav-link-custom" href="/blogs">Home</a>
+        <a class="nav-link text-white mx-2 nav-link-custom" href="/blogs">All Blogs</a>
+        <% if (userId) { %>
+          <a class="nav-link text-white mx-2 nav-link-custom" href="/blogs/new">Write Blog</a>
+        <% } %>
+      </div>
+
+      <!-- Search Bar -->
+      <form class="d-flex mx-auto" role="search" action="/blogs/search" method="GET">
+        <input class="form-control me-2 border-0 rounded-pill px-3" type="search" name="q" placeholder="Search blogs..." aria-label="Search">
+        <button class="btn rounded-pill px-4 text-white" style="background-color: #F7B731;" type="submit">Search</button>
+      </form>
+
+      <!-- Right Links -->
+      <div class="navbar-nav ms-auto d-flex align-items-center">
+        <% if (userId) { %>
+          <a class="nav-link text-light mx-2" href="#">👤 <%= userName || "You" %></a>
+          <a class="nav-link text-white mx-2 nav-link-custom" href="/blogs/auth/logout">Logout</a>
+        <% } else { %>
+          <a class="nav-link text-white mx-2 nav-link-custom" href="/blogs/auth/signup">Sign up</a>
+          <a class="nav-link text-white mx-2 nav-link-custom" href="/blogs/auth/login">Log in</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

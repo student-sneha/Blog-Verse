@@ -1,0 +1,75 @@
+
+.nav-link-custom {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #F7B731;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #F7B731 !important;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+.blog-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.read-btn {
+  background-color: #6c5ce7;
+  color: white;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.read-btn:hover {
+  background-color: #a29bfe;
+  color: #fff;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: 0.3px;
+  transition: background-color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+}

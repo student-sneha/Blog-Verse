@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5 mb-5">
+  <h2 class="mb-4">✍️ Write a New Blog</h2>
+  <form action="/blogs" method="POST">
+    <!-- Blog Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Blog Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        placeholder="Enter blog title"
+        required
+      />
+    </div>
+
+    <!-- Blog Content -->
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        id="content"
+        name="content"
+        rows="8"
+        placeholder="Write your blog content here..."
+        required
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-success">Publish Blog</button>
+  </form>
+</div>

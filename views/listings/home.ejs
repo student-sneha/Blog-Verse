@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container py-5">
+  <h2 class="mb-5 text-center fw-bold" style="color: #34495e;">🌟 Explore Blogs</h2>
+
+  <div class="row">
+    <% allBlogs.forEach(blog => { %>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="blog-card p-4 shadow-sm h-100 border-0" style="background-color: #fdfdfd; border-radius: 18px;">
+          <h5 class="fw-bold mb-2" style="color: #2d3436;"><%= blog.title %></h5>
+
+          <p class="text-muted small mb-1">
+            By <strong><%= blog.author || "Sneha Gupta" %></strong>
+          </p>
+
+          <p class="card-text text-secondary" style="font-size: 0.95rem;"><%= blog.content.substring(0, 100) %>...</p>
+
+          <a href="/blogs/<%= blog._id %>" class="read-btn mt-3 d-inline-block px-3 py-2 text-center">Read More</a>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>

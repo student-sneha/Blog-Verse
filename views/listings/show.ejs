@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5 mb-5">
+  <h1 class="display-5 mb-3 fw-semibold"><%= blog.title %></h1>
+
+  <div class="blog-meta text-muted mb-2">
+    Posted by <strong><%= blog.author || "Sneha Gupta" %></strong> on <%= blog.createdAt.toDateString() %>
+  </div>
+
+  <% if (userName && blog.author === userName) { %>
+    <div class="alert alert-success p-2 rounded-pill d-inline-block mb-3">
+      👤 You are the author of this blog
+    </div>
+  <% } %>
+
+  <div class="blog-content fs-5 mb-4">
+    <p><%= blog.content %></p>
+  </div>
+
+  <% if (userName && blog.author === userName) { %>
+    <div class="btns d-flex gap-2">
+      <a href="/blogs/<%= blog._id %>/edit" class="btn btn-primary">Edit</a>
+      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete this blog?')">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  <% } %>
+</div>
