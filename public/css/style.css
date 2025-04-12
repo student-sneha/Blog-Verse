@@ -14,7 +14,9 @@
   background-color: #F7B731;
   transition: width 0.3s ease;
 }
-
+.navbar-toggler {
+  color: white; /* For the icon bars if using a custom icon */
+}
 .nav-link-custom:hover {
   color: #F7B731 !important;
 }
